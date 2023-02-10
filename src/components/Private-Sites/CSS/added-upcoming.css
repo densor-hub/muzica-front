@@ -1,0 +1,183 @@
+.addeed-upcoming .page-heading{
+    top: 0px;
+}
+
+
+.addeed-upcoming .list-of-individual-items{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    background-color: rgb(0, 0, 0, 0.5);
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+    border: 1px solid white;
+}
+.addeed-upcoming .list-of-individual-items .for-upcoming {
+    display: grid;
+    grid-template-columns: 95% 5%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 200px;
+}
+
+.addeed-upcoming .list-of-individual-items .for-upcoming .items{
+    height: fit-content;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    font-size: small;
+    border: 1px solid rgb(156, 145, 145);
+    background-color: rgb(0, 0, 0, 0.5);
+    text-align: center;
+    width: 125px;
+    
+}
+
+.addeed-upcoming .list-of-individual-items .for-upcoming .items .type{
+    background-color: rgb(243, 93, 93);
+    padding: 3px 0px;
+}
+
+.addeed-upcoming .list-of-individual-items .for-upcoming .items .date{
+    background-color: white;
+    color: black;
+}
+
+.addeed-upcoming .list-of-individual-items .for-upcoming .items .description{
+    width: 120px;
+}
+
+.addeed-upcoming .list-of-individual-items .for-upcoming .options-container{
+    z-index: 2;
+    position: relative;
+    right: 30px;
+    text-align: left;
+}
+
+.addeed-upcoming .list-of-individual-items .for-upcoming .options-container .firstoptionsBtn{
+    position: relative;
+    margin-left: 5px;
+}
+
+.addeed-upcoming .list-of-individual-items .for-upcoming .options-container .cancelBtn{
+    position: relative;
+}
+
+@media all and (max-width:562px){
+   .addeed-upcoming .list-of-individual-items  {
+        grid-template-columns: 50% 50%;
+    }
+
+
+    .addeed-upcoming .list-of-individual-items .for-upcoming .options-container{
+        z-index: 10;
+        position: relative;
+    }
+}
+
+@media all and (max-width: 430px){
+    /* .addeed-upcoming .list-of-individual-items .for-upcoming {
+        width: 150px;
+    } */
+
+    /* .addeed-upcoming .list-of-individual-items .for-upcoming .options-container .firstoptionsBtn{
+        position: relative;
+        left: 17px;
+    }
+
+    .addeed-upcoming .list-of-individual-items .for-upcoming .options-container .options a.edit{
+        padding: 2px 12.1px;
+    } */
+    .addeed-upcoming .list-of-individual-items .for-upcoming{
+        position: relative;
+        right: 20px;
+    }
+
+
+
+}
+@media all and (max-width: 405px){
+    .addeed-upcoming .list-of-individual-items{
+        grid-template-columns: 50% 50%;
+        padding: 0;
+    }
+    
+    .addeed-upcoming .list-of-individual-items .for-upcoming{
+        width: 100%;
+        grid-template-columns: 95% 5%;
+    }
+
+    .addeed-upcoming .list-of-individual-items .for-upcoming .items{
+        position: relative;
+    }
+    
+    
+    .addeed-upcoming .list-of-individual-items .for-upcoming .options-container {
+        position: relative;
+        right: 23px;
+    }
+}
+
+
+@media all and (max-width: 360px){
+    .addeed-upcoming .list-of-individual-items  {
+        grid-template-columns: 100%;
+    }
+
+    .addeed-upcoming .list-of-individual-items .for-upcoming {
+        height: fit-content;
+        width: 200px;
+    }
+}
+
+@media all and (max-width: 250px){
+     .addeed-upcoming .list-of-individual-items{
+        overflow-x: scroll;
+     }
+}
+
+@media all and (max-width: 210px){
+    .addeed-upcoming .list-of-individual-items .for-upcoming {
+        width: 100vw;
+        font-size: x-small;
+    }
+    .addeed-upcoming .list-of-individual-items .for-upcoming .items{
+        width: 50vw;
+    }
+
+    .addeed-upcoming .list-of-individual-items .for-upcoming .items .description{
+        width: 49vw;
+    }
+    .addeed-upcoming .list-of-individual-items .for-upcoming .options-container button,
+    .addeed-upcoming .list-of-individual-items .for-upcoming .options-container a{
+        font-size: xx-small;
+    }
+
+    .addeed-upcoming .list-of-individual-items .for-upcoming .options-container a{
+        padding: 2px 10px;
+    }
+
+
+}
+
+@media all and (max-width: 120px){
+    .addeed-upcoming{
+        overflow-x: scroll;
+    }
+    .addeed-upcoming .list-of-individual-items .for-upcoming .items {
+        overflow-x: scroll;
+    }
+    .addeed-upcoming .list-of-individual-items .for-upcoming .items .description,
+    .addeed-upcoming .list-of-individual-items .for-upcoming .items .type,
+    .addeed-upcoming .list-of-individual-items .for-upcoming .items .date{
+        font-size: x-small;
+        overflow-x: scroll;
+    }
+
+}
+
+@media all and (max-width: 110px){
+    .addeed-upcoming .list-of-individual-items .for-upcoming .options-container{
+        right: 20vw;
+    }
+}

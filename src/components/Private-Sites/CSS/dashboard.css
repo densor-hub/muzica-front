@@ -1,0 +1,196 @@
+body{
+    overflow-x: hidden;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.profile-page-container{
+    position: relative;
+    overflow-x: hidden;
+}
+
+.profile-page-container .profile{
+    width: 100vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    position: relative;
+}
+
+.profile-page-container .profile .topside{
+    border: 1px solid transparent;
+    color: white;
+}
+
+
+.profile-page-container .profile .topside .image-container{
+    text-align: center;
+    position: relative;
+    top: 10px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.profile-page-container .profile .topside .image-container img{
+    width: 80px;
+    height: 80px;
+    border: 10px solid white;
+    margin:  0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.profile-page-container .profile .topside .default-upload-button{
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+    display: none;
+}
+
+
+.profile-page-container .profile .topside .stage-name{
+    text-align: center;
+    position: relative;
+    top: 10px;
+    right: 10px;
+}
+.profile-page-container .create-website-link-container{
+    text-align: center;
+    margin-top: 10px;
+}
+.profile-page-container .profile .create-website-link{
+    color: white;
+    text-decoration: none;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 15px 30px;
+    margin-top: 20px;
+    display: block;
+    border-radius: 30px;
+    background-color: white;
+    color: rgb(242, 83, 83);
+    font-weight: bold;
+}
+
+.profile-page-container .collections-container{
+    padding-bottom: 60px;
+}
+.profile-page-container .collections{
+    width: 800px;
+    display: grid;
+    grid-template-columns:  repeat(auto-fit, minmax(250px, 1fr));
+    margin: 0 auto;
+    text-align: center;
+    border: 2px solid rgb(146, 128, 128);
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.164);
+    padding-bottom: 20px;
+}
+
+.profile-page-container .profile .collections .added{
+    border-radius: 20px;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.73);
+    color: rgb(255, 71, 86);
+}
+
+.profile-page-container .profile .collections .added a{
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(109, 102, 102);
+}
+
+.profile-page-container .profile .collections .added a .icon{
+    color: rgb(242, 83, 83);
+    font-size: 30px;
+}
+
+/*******************************************************************************************************/
+@media all and (max-width: 830px){
+    .profile-page-container .collections{
+        width: 90%;
+        
+    }
+
+    .profile-page-container .profile .collections .added{
+        width: 180px;
+    }
+}
+
+
+
+/*******************************************************************************************************/
+@media all and (max-width: 570px){
+    .profile-page-container .collections{
+        width: 90%;
+        grid-template-columns: 50% 50% ;
+    }
+
+    .profile-page-container .profile .collections .added{
+        width: 80%;
+    }
+}
+
+
+@media all and (max-width: 230px){
+    .profile-page-container .profile .create-website-link{
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .profile-page-container .collections{
+        width: 90%;
+        grid-template-columns: 100% ;
+    }
+    .profile-page-container .profile .collections .added{
+        height: 50px;
+        font-size: small;
+    }
+}
+
+@media all and (max-width: 155px){
+
+    .profile-page-container .profile .topside .image-container img{
+        width: 40px;
+        height: 40px;
+        border: 2px solid white;
+    }
+    .profile-page-container .profile .topside .stage-name{
+        width: 100vw;
+        left: 3px;
+        
+    }
+    .profile-page-container .profile .topside .upload-button-container{
+        flex-direction: column;
+    }
+
+    .profile-page-container .profile .create-website-link{
+        border-radius: 0px;
+        padding: 0px;
+    }
+    .profile-page-container .collections{
+        border: 0px;
+    }
+    .profile-page-container .profile .collections .added{
+        width: 100%;
+        font-size: xx-small;
+    }
+
+}

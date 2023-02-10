@@ -1,0 +1,263 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+
+    
+}
+
+
+.added-items{
+    background-image: url('../../../../public/images/IMG_4488.JPG');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: fit-content;
+    color: white;
+    overflow-x: hidden;
+}
+
+.added-items .content-cover{
+    background-color: rgb(0,0,0,0.5);
+    min-height: 100vh;
+    min-width: 100%;
+    overflow-x: hidden;
+}
+
+.added-items header{
+    text-align: center;
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    margin: 0 auto;
+    background-color: white;
+    
+}
+.added-items .forMobileDevicesMenu{
+    display: none;
+}
+.added-items header a{
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    color: rgb(162, 74, 74);
+    width: 100px;
+    display: inline-flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.added-items header a:hover,
+.added-items header a:focus
+{
+    background-color: rgba(158, 112, 112, 0.292);
+}
+
+.added-items .feedback-container{
+    text-align: center;
+    background-color: rgb(162, 74, 74);
+    padding: 5px 0px;
+    margin-bottom: 20px;
+
+}
+
+.added-items .page-heading{
+    position: relative;
+    text-align: center;
+}
+
+.added-items .menu-icon-container button{
+    position: relative;
+    border: 0px;
+    background-color: white;
+    padding: 5px;
+    height: 45px;
+    width: 40px;
+    color: rgb(242, 83, 83);
+}
+.added-items .search-item{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+}
+
+.added-items .search-item input{
+    width: 400px;
+    height: 35px;
+    border-radius: 50px;
+    color: black;
+    background-color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    border: 2px solid rgba(211, 180, 180, 0.484);
+}
+
+.added-items .indivial-item .optionsBtn{
+    height: 30px;
+    width: 30px;
+    position: relative;
+    right: 10px;
+    background-color: transparent;
+}
+
+
+.added-items .indivial-item .title{
+    text-align: center;
+    color: white;
+}
+
+.added-items .indivial-item .options-container{
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    right: 17px;
+}
+.added-items button{
+    color: white;
+}
+.added-items a,
+.added-items input{
+    color: white;
+}
+
+.added-items input{
+    background-color: transparent;
+    color: white;
+}
+.added-items .indivial-item button,
+.added-items .indivial-item a{
+    color: white;
+    padding: 3px 5px;
+    border: 0px;
+    margin-bottom: 10px 0px;
+}
+
+.added-items .indivial-item a.edit{
+    background-color: rgba(35, 169, 35, 0.723);
+    text-decoration: none;
+    position: relative;
+    padding: 2.1px 13px;
+}
+
+.added-items .indivial-item button.delete{
+    background-color: red;
+    margin-top: 10px;
+}
+
+.added-items .indivial-item button.details{
+    background-color: rgb(67, 104, 67);
+}
+
+.added-items i.read-more{
+    color: yellow;
+}
+
+.added-items i.fold-up{
+    color: yellow;
+}
+
+.added-items .show{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    z-index: 11;
+    position: absolute;
+}
+
+.added-items .show a{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.added-items .hide{
+    display: none;
+}
+
+.added-items header{
+    overflow-y: hidden;
+}
+.added-items header a{
+    height: 53px;
+}
+
+
+@media all and (max-width: 970px){
+    .added-items header a{
+        width: 80px;
+    }
+}
+
+@media all and (max-width: 811px){
+    .added-items header a{
+        width: 60px;
+        font-size: 13px;
+    }
+}
+
+
+@media all and (max-width: 650px){
+   
+    .added-items header{
+        flex-direction: row;
+        text-align: left;
+        align-items: left;
+        justify-content: left;
+    }
+
+}
+
+@media all and (max-width: 565px){
+    .added-items header a{
+        width: 55px;
+        font-size: 12px;
+    }
+}
+
+@media all and (max-width: 495px){
+
+    .added-items .forMobileDevicesMenu{
+        display:block;
+        background-color: white;
+        width: 100vw;
+    }
+
+    .added-items .forMobileDevicesMenu .menu-icon-container{
+        height:50px;
+    }
+
+    .added-items header{
+       display: none;
+    }
+
+    .added-items header div:first-child{
+        top: -22px;
+    }
+    .added-items .search-item input{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .added-items .page-heading{
+        font-size: 13px;
+    }
+
+
+}
+
+
+

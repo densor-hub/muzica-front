@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.image-site{
+    background-color: rgb(0,0,0,0.7);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 50px;
+}
+
+.image-site .items-container{
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.image-site .items-container .individual-item{
+    text-align: center;
+    width: 250px;
+}
+
+.image-site .items-container .individual-item img{
+    width: 230px;
+    border: 3px solid rgb(188, 148, 148);
+    margin: 0 auto;
+}
+
+.image-site .large-icon{
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+    padding-top: 20px;
+}
+
+@media all and (max-width: 675px){
+
+    .image-site .items-container{
+        grid-template-columns: 50% 50%;
+    }
+    .image-site .items-container .individual-item{
+        padding: 0px;
+        margin: 0px;
+        width: 200px;
+        margin: 0 auto;
+    }
+    .image-site .items-container .individual-item img{
+        width: 200px;
+    }
+}
+
+@media all and (max-width: 495px){
+
+    .image-site .items-container{
+        width: 100%;
+        grid-template-columns: 33% 33% 33%;
+    }
+    .image-site .items-container .individual-item{
+        padding: 0px;
+        margin: 0px;
+        width: 100px;
+        margin: 0 auto;
+    }
+    .image-site .items-container .individual-item img{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media all and (max-width: 298px){
+    .image-site .items-container{
+        grid-template-columns: 100%;
+    }
+    
+}
+
+@media screen and (max-width : 264px){
+    .image-site{
+        padding-top: 200px;
+    }
+}
+
+@media all and (max-width: 101px){
+    .image-site .large-icon{
+        font-size: small;
+    }
+    .image-site .items-container .individual-item{
+        padding: 0px;
+        margin: 0px;
+        width: 100vw;
+        margin: 0 auto;
+    }
+    .image-site .items-container .individual-item img{
+        width: 100vw;
+        height: 100px;
+    }
+}

@@ -1,0 +1,175 @@
+
+.add-videos{
+    border: 2px solid white;
+    background-color: rgb(0,0,0,0.7);
+    width: fit-content;
+    padding: 50px;
+    margin: 0 auto;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+.add-videos form input{
+    width: 120px; 
+    background-color: transparent;
+    color: white;
+    border: 0px;
+    border-bottom: 3px solid white;
+    position: relative;
+    top: -7px;
+}
+
+.add-videos ::-webkit-input-placeholder{
+   color: rgb(144, 143, 142);
+}
+
+.add-videos form td{
+    height: 30px;
+}
+
+.add-videos form td.req{
+    width: 120px;
+    display: grid;
+    grid-template-columns: 95% 5%;
+}
+
+.add-videos form td.req span{
+    position: relative;
+    right: 10px;
+}
+
+.add-videos button{
+    background-color: white;
+    color: rgb(255, 71, 86);
+    font-weight: bold;
+    border: 0px;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.list-of-added-videos{
+    margin-top: 20px;
+    background-color: rgba(255, 71, 86, 0.696);
+
+}
+
+.list-of-added-videos .heading{
+    background-color: rgb(255, 71, 86);
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 3px;
+}
+
+.list-of-added-videos .items{
+    margin-top: 3PX;
+    display: grid;
+    grid-template-columns: 40% 30% 30%;
+    height: 80px;
+    background-color: rgb(0,0,0,0.7);
+}
+
+.list-of-added-videos .items .iframe{
+    width: 150px;
+    height: 80px;
+    border: 1px solid wheat;
+    margin-right: 10px;
+}
+
+.list-of-added-videos .items .buttons{
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 30px;
+}
+
+.list-of-added-videos button{
+    border: 0px;
+    border-radius: 8px;
+    padding: 1px 10px;
+    font-size: 12px;
+    margin: 0px 5px;
+    color: white;
+    border: 1px solid white;
+}
+
+.list-of-added-videos button.edit{
+    background-color: green;
+}
+.list-of-added-videos button.delete{
+    background-color: red;
+}
+.list-of-added-videos .title{
+   height: fit-content;
+   position: relative;
+   top: 50%;
+   transform: translateY(-50%)
+}
+
+.navigation-btns{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.navigation-btns button{
+    background-color: rgb(255, 71, 86);
+    color: white;
+    border: 0px;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+@media all and (max-width: 350px){
+    .add-videos{
+        width: 100vw;
+        padding: 50px 0px;
+        margin: 0px;
+    }
+
+    .add-videos form{
+        padding: 0px;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    
+}
+
+
+@media all and (max-width:250px){
+    .add-videos  label{
+        font-size: small;
+    }
+    .add-videos form td.req {
+        font-size: small;
+        width: 70px;
+    }
+
+    .add-videos  form TD input {
+        font-size: small;
+        width: 50VW;
+    }
+
+    
+}
+
+@media all and (max-width:165px){
+    .add-videos{
+        overflow: scroll;
+    }
+    .add-videos button{
+        padding: 3px;
+        font-size: small;
+        margin: 0px;
+    }
+
+     .next-skip-back-buttons button{
+        margin-bottom: 10px;
+    }
+}

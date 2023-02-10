@@ -1,0 +1,109 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+::-webkit-calendar-picker-indicator {
+    background-color: white;
+    cursor: pointer;
+    color: black;
+}
+
+.dashboard {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    border: 1px solid transparent;
+    background-image: url('../../../public/images/IMG_4494.JPG');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    border: 0px;
+    min-height: 100vh;
+}
+
+.dashboard .contentt {
+    background-color: rgb(0, 0, 0, 0.7);
+    min-height: 100vh;
+}
+
+
+.dashboard header {
+    height: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(255, 71, 86);
+    display: none;
+}
+
+.dashboard .main-directive {
+    text-align: center;
+    font-weight: 100;
+    margin-bottom: 70px;
+    position: relative;
+    top: 50px;
+}
+
+.dashboard .directives .directive {
+    font-size: x-small;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.directives .topics {
+    text-Align: center;
+    margin: 10px 0px;
+}
+
+.directives .topics .pageHeading i {
+    background-color: white;
+    color: rgb(255, 71, 86);
+    padding: 0px 6px;
+}
+
+.dashboard .feedback {
+    background-color: red;
+    color: white;
+    margin: 0 auto;
+    padding: 2px 10px;
+}
+
+.navigation-buttons-container button {
+    background-color: rgb(255, 71, 86);
+    color: white;
+    border: 0px;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.dashboard footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    text-align: center;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 71, 86);
+    color: white;
+    font-size: small;
+    display: none;
+}
+
+@media all and (max-width: 140px) {
+
+    span.pageHeading b,
+    span.pageHeading b i {
+        font-size: x-small;
+    }
+
+    .dashboard .contentt {
+        overflow: scroll
+    }
+
+    ;
+}

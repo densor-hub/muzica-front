@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.news-site{
+    min-height: 100vh;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('../../../../public/images/IMG_4488.JPG');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 50px;
+}
+
+.news-site .cover{
+    background-color: rgb(0,0,0,0.5);
+    min-height: 100vh;
+    width: 100%;
+    padding-bottom: 80px;
+}
+
+.news-site .large-icon{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    color: white;
+    font-weight: bold;
+}
+
+.news-site .large-icon .icon{
+    font-size: 100px;
+}
+.news-site .items-container{
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 20px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0,0,0,0.6);
+    padding: 50px 20px;
+    border: 2px solid white;
+}
+
+.news-site .items-container .news{
+    padding: 10px 0px;
+    margin-bottom: 50px;
+}
+
+.news-site .items-container .news .headline{
+    background-color: rgb(235, 81, 81);
+    text-align: center;
+    padding: 5px;
+    margin: 0 auto;
+    width: 98%;
+}
+
+.news-site .items-container .news .details{
+    text-align: center;
+    margin-top: 10px;
+    width: 500px;
+}
+
+.news-site .items-container .news .details img{
+    border: 2px solid white;
+    width: 200px;
+    margin: 15px;
+}
+
+@media all and (max-width: 672px) {
+    .news-site .items-container{
+        width: 90vw;
+    }
+
+    .news-site .items-container .news .details{
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .news-site .items-container{
+        width: 100vw;
+    }
+}
+
+@media all and (max-width: 261px) {
+    .news-site .items-container .news .details img{
+        width: 90vw;
+    }
+}   
+
+@media all and (max-width: 155px) {
+    .news-site .large-icon .icon{
+        font-size: 50px;
+    }
+    .news-site{
+        overflow: scroll;
+    }
+    .news-site .large-icon{
+        font-size: small;
+    }
+    .news-site .news .headline{
+        font-size: x-small;
+        width: 100vw;
+    }
+    .news-site .news .details{
+        font-size: xx-small;
+        width: 100%;
+    }
+
+    .news-site .items-container{
+        overflow-x: scroll;
+    }
+}

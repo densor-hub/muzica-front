@@ -1,0 +1,396 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-calendar-picker-indicator {
+    background-color: white;
+    cursor: pointer;
+    color: black;
+}
+
+body {
+    background-image: url('../../../public/images/IMG_4488.JPG');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    background-position: center;
+}
+
+.signin-container::-webkit-textfield-decoration-container {
+    border: 0px;
+}
+
+.signin-container {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signin-container header {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin-container header a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    padding: 3px 10px;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: rgb(238, 94, 106);
+    font-size: 13px;
+}
+
+.signin-container header a:hover,
+.signin-container header a:focus {
+    background-color: white;
+    color: rgb(255, 71, 86);
+    border: 1px solid rgb(255, 71, 86);
+}
+
+
+
+.signin-container .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 50px;
+    background-color: rgb(0, 0, 0, 0.5);
+    border-radius: 20px;
+    border: 1px solid rgb(154, 147, 147);
+
+}
+
+.signin-container .form-container .feedback {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.signin-container form {
+    border: 2px solid white;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 50px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+
+}
+
+.signin-container form label {
+    font-weight: bold;
+}
+
+.signin-container form .form-heading {
+    height: 2px;
+    position: relative;
+    bottom: 30px;
+    font-size: large;
+}
+
+.signin-container form td {
+    height: 30px;
+    width: 100px;
+    text-align: left;
+}
+
+.signin-container .form-container form td .gender .gender-selector-button {
+    background-color: rgb(238, 94, 106);
+    border: 0px;
+    color: white;
+    padding: 2px 10px;
+    margin-right: 7px;
+}
+
+.signin-container form td div {
+    border-bottom: 3px solid white;
+}
+
+.signin-container .form-container form td input {
+    border: 0px;
+    background-color: transparent;
+    color: white;
+
+}
+
+.signin-container .form-container form td input {
+    border: 0px;
+}
+
+.signin-container .form-container form .input-directive {
+    font-size: 12px;
+    text-align: left;
+    border-radius: 20px;
+    color: white;
+}
+
+.signin-container .PhoneInput {
+    display: grid;
+    grid-template-columns: 20px 150px;
+    overflow: hidden;
+    border-bottom: 0px solid transparent;
+}
+
+.signin-container .PhoneInput input {
+    position: relative;
+    border-bottom: 0px;
+    width: 155px;
+
+}
+
+.signin-container .PhoneInput .PhoneInputCountry {
+    font-size: 0px;
+    border: 1px solid transparent;
+    height: 18px;
+    width: 20px;
+    overflow: hidden;
+}
+
+
+.signin-container .PhoneInput .PhoneInputCountry .PhoneInputCountryIcon {
+    position: relative;
+    height: 20px;
+}
+
+.signin-container .PhoneInput .PhoneInputCountry .PhoneInputCountryIcon img {
+    width: 100%;
+}
+
+.signin-container .PhoneInput .PhoneInputCountry .PhoneInputCountrySelect {
+    font-size: 0px;
+    height: 16px;
+    width: 17px;
+    text-align: center;
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+
+}
+
+.signin-container .PhoneInput .PhoneInputCountry .PhoneInputCountrySelectArrow {
+    display: none;
+}
+
+.signin-container input.extend {
+    width: 175px;
+}
+
+.signin-container div.password,
+.signin-container div.confirmpassword {
+    display: flex;
+    border-bottom: 3px solid white;
+}
+
+.signin-container div.password button,
+.signin-container div.confirmpassword button {
+    margin: 0px 2px;
+    padding: 0;
+    background-color: transparent;
+    border: 0px;
+    color: white;
+    font-weight: bold;
+}
+
+.signin-container .sign-in-with-google {
+    margin-bottom: 10px;
+}
+
+.signin-container .not-having-account a {
+    color: rgb(255, 71, 86);
+    font-weight: bold;
+}
+
+.signin-container .form-container form button.submit {
+    background-color: rgb(255, 71, 86);
+    color: white;
+    padding: 10px;
+    border: 0px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/*Forgot password also has classname sign-in-with-google (a)*/
+.sign-in-with-google a {
+    color: white;
+}
+
+.sign-in-with-google a:hover {
+    color: rgb(255, 108, 108);
+}
+
+.sign-in-with-google button {
+    padding: 0px 10px;
+    border: 0px;
+    margin-top: 10px;
+    font-size: small;
+}
+
+.sign-in-with-google button:hover {
+    background-color: white;
+}
+
+.sign-in-with-google span.blue {
+    color: rgb(78, 119, 194);
+}
+
+.sign-in-with-google span.yellow {
+    color: rgb(224, 192, 16);
+}
+
+.sign-in-with-google span.green {
+    color: rgb(81, 148, 81)
+}
+
+.sign-in-with-google span.red {
+    color: rgb(221, 60, 60)
+}
+
+.signin-container footer {
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(255, 71, 86);
+    color: rgb(225, 201, 201);
+    padding: 10px;
+    width: 100%;
+    font-size: small;
+}
+
+
+
+@media all and (max-width: 450px) {
+    .signin-container .form-container {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+}
+
+@media all and (max-width: 265px) {
+
+    .signin-container {
+        font: x-small;
+    }
+
+    .signin-container header {
+        flex-direction: column;
+        width: 50px;
+    }
+
+    .signin-container .form-container {
+        overflow-x: scroll;
+        padding: 30px 0px;
+        padding-left: 30px;
+        border-radius: 0px;
+    }
+
+    .signin-container form {
+        padding: 20px 0px;
+        border: 0px;
+        margin: 0 auto;
+    }
+
+    .signin-container form label {
+        font-weight: 10;
+    }
+
+    .signin-container .form-container form td .gender .gender-selector-button {
+        padding: 3px;
+        margin: 0px;
+        margin: 5px;
+        width: 40px;
+        font-size: 11px;
+
+    }
+
+    .signin-container .form-container form button.submit {
+        padding: 4px;
+
+    }
+
+    .signin-container .PhoneInput {
+        width: 100px;
+    }
+
+    .signin-container .PhoneInput input {
+        width: 50px;
+    }
+
+    .signin-container input {
+        width: 80px;
+    }
+
+    .signin-container input.extend {
+        width: 100px;
+    }
+
+
+
+    .signin-container footer {
+        font-size: xx-small;
+    }
+
+}
+
+@media all and (max-width: 172px) {
+    .signin-container form td {
+        width: 10px;
+    }
+
+    .signin-container .form label {
+        border: 1px solid red;
+    }
+
+    .signin-container input {
+        width: 50px;
+    }
+
+    .signin-container input.extend {
+        width: 60px;
+    }
+
+    .signin-container .PhoneInput {
+        width: 60px;
+    }
+
+    .signin-container .PhoneInput input {
+        width: 35px;
+    }
+
+
+    .signin-container form td div {
+        width: 60px;
+    }
+}
+
+@media all and (max-width: 95px) {
+
+    .signin-container {
+        margin: 0 auto;
+    }
+
+
+
+    .sign-in-with-google button {
+        padding: 0px;
+        font-size: x-small;
+    }
+
+    .signin-container footer {
+        overflow: hidden;
+    }
+
+}

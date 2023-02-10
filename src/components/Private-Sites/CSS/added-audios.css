@@ -1,0 +1,289 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+.added-items{
+    background-color: rgb(0,0,0,0.5);
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+
+.added-items .search-item{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.added-items .list-of-individual-items{
+    width: 87%;
+    display: grid;
+    grid-template-columns:  repeat(auto-fit, minmax(250px, 1fr));
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.387);
+    border: 1px solid white;
+}
+
+.list-of-individual-items .for-audios{
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 200px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 95% 5%;
+    padding-bottom: 0px;
+}
+.list-of-individual-items .for-audios{
+    padding: 10px 0px 30px;
+}
+
+
+.added-items .indivial-item .optionsBtn{
+    height: 30px;
+    width: 30px;
+    position: relative;
+    right: 10px;
+    background-color: transparent;
+}
+
+
+.added-items .indivial-item .title{
+    text-align: center;
+    color: white;
+}
+
+.added-items .for-audios .options-container{
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    right: 17px;
+}
+
+.added-items .indivial-item button{
+    color: white;
+    padding: 3px 5px;
+    border: 0px;
+    margin-bottom: 5px;
+}
+
+.added-items .indivial-item button.edit{
+    background-color: green;
+}
+
+.added-items .indivial-item button.delete{
+    background-color: red;
+}
+
+.added-items .indivial-item button.details{
+    background-color: rgb(67, 104, 67);
+}
+
+
+.added-items .for-audios .audio-container img{
+    background-position: center;
+    background-size: cover;
+    width: 150PX;
+    height: 150PX;
+}
+
+.added-items  .for-audios .details-conatiner{
+    border: 2px solid rgb(170, 153, 153);
+    width: 170px;
+    margin: 0 auto;
+    padding: 2px;
+    background-color: rgba(255, 255, 255, 0.131);
+}
+
+.added-items  .for-audios .details-conatiner .date-released{
+    font-size: x-small;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.added-items .added-streaming-platforms .platforms{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.added-items .added-streaming-platforms .platforms div{
+    margin: 2px;
+    border: 1px solid transparent;
+    display: inline-block;
+}
+.added-items .added-streaming-platforms .platforms div:hover{
+    border: 1px solid wheat;
+}
+
+.added-items .feedback-container{
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgb(162, 74, 74);
+    padding: 5px 0px;
+}
+
+
+@media all and (max-width: 650px){
+    .added-items .list-of-individual-items{
+        width: 100%;
+        grid-template-columns: 50% 50%;
+    }
+    .added-items .list-of-individual-items .for-audios{
+        position: relative;
+        width: 150px;
+    }
+
+    .added-items .list-of-individual-items .for-audios .options-container{
+        position:  relative;
+        left: 1vw;
+    }
+
+}
+
+@media all and (max-width: 495px){
+   
+    .added-items .search-item input{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .added-items .for-audios{
+        width: 120px;
+        font-size: small;
+        height: fit-content;
+    }
+
+    .added-items .for-audios .audio-container img{
+        width: 80PX;
+        height: 80px;
+    }
+  
+
+    .added-items .for-audios .options-container{
+        font-size: small;
+        position: relative;
+        bottom: 10px;
+    }
+
+    .added-items .for-audios .details-conatiner{
+        border: 1px solid rgb(170, 153, 153);
+        width: 150px;
+        position: relative;
+        top: 12px;
+        margin-bottom: 30px;
+    }
+
+    .added-items .for-audios .details-conatiner .date-released{
+        font-size: 12px;
+    }
+    .added-items .list-of-individual-items .for-audios .options-container{
+        position:  relative;
+        left: -7vw;
+    }
+}
+
+@media all and (max-width: 395px){
+    .added-items .list-of-individual-items .for-audios .options-container{
+        position: relative;
+        left: -8vw;
+
+    }
+}
+
+
+@media all and (max-width: 450px){
+    .added-items .list-of-individual-items .for-audios .options-container{
+        position: relative;
+        right: 7vw;
+    }
+}
+
+
+@media all and (max-width: 350px){
+    .added-items .list-of-individual-items{
+        position: relative;
+        grid-template-columns: 100%;
+    }
+}
+
+
+@media all and (max-width: 295px){
+    .added-items header a{
+        font-size: 14PX;
+        padding: 5px;
+    }
+
+    .added-items .list-of-individual-items .for-audios .title{
+        width: 65px;
+        text-align: left;
+        font-size: x-small;
+        margin: 0 auto;
+        
+    }
+
+    .added-items .list-of-individual-items .for-audios .details-conatiner .date-released{
+        font-size: xx-small;
+        margin-top: 10px;
+    }
+
+    .added-items .list-of-individual-items{
+        grid-template-columns: 100%;
+        overflow-x: scroll;
+    }
+
+}
+
+@media all and (max-width: 199px){
+    .added-items .list-of-individual-items .for-audios .options-container{
+        right: 15vw;
+    }
+    .added-items .added-socials-in-icons .icons{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .added-items  .bookings {
+        padding: 10px 0px;
+    }
+    .added-items  .bookings div{
+        font-size: xx-small;
+    }
+}
+@media all and (max-width : 156px){
+    .added-items .list-of-individual-items .for-audios{
+        height: fit-content;
+    }
+    .added-items .list-of-individual-items .for-audios img{
+        width: 30px;
+        height: 30px;
+    }
+
+    .added-items .list-of-individual-items .for-audios .audio-container{
+        position: relative;
+        left: 10px;
+    }
+
+    .added-items .list-of-individual-items .for-audios .options-container button,
+    .added-items .list-of-individual-items .for-audios .options-container a{
+        font-size: xx-small;
+    }
+    .added-items .list-of-individual-items .for-audios .details-conatiner{
+        min-width: 150px;
+        overflow: scroll;
+        margin-bottom:10px;
+    }
+
+    .added-items .list-of-individual-items .for-audios .options-container{
+        left: -40px;
+    }
+
+}
+

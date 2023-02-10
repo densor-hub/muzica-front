@@ -1,0 +1,61 @@
+.progress-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 30px;
+}
+
+.ball{
+    border-radius: 30px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 71, 86);
+}
+
+.ball .number{
+    color: rgb(255, 71, 86);
+}
+
+.ball .validated {
+    width: 30px;
+    display: grid;
+    grid-template-columns   : 50% 50%;
+}
+
+.ball .validated div{
+    height: 1px;
+    border: 1px solid white;
+    background-color: white;
+}
+
+.ball .validated .front{
+    
+    height: 3px;
+    width: 5px;
+    border-top-left-radius: 3PX ;
+    transform: rotate(42deg);
+    position: relative;
+    left: 9px;
+
+}
+
+.ball .validated .back{
+    height: 3px;
+    width: 11px;
+    border-top-right-radius: 3px;
+    transform: rotate(-47deg);
+    position: relative;
+    right: 4px;
+    top: -0.8px;
+}
+.bar{
+    width: 10vw;
+    height: 5px;
+    background-color: rgb(255, 71, 86);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}

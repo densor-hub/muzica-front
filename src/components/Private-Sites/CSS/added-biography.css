@@ -1,0 +1,15 @@
+.added-items .biography-container{
+    border:  2px solid wheat;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(0,0,0,0.5);
+    overflow-x: scroll;
+}
+
+@media all and (min-width : 495px){
+    .added-items .biography-container{
+        width: 80vw;
+        margin: 0 auto;
+        overflow: scroll;
+    }
+}

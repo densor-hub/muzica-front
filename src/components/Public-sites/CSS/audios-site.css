@@ -1,0 +1,186 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.audios-site {
+    min-height: 100vh;
+    background-image: url('../../../../public/images/IMG_4488.JPG');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 50px;
+}
+
+.audios-site .cover{
+    background-color: rgb(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    font-weight: bold;
+    padding-bottom: 80px;
+}
+
+.audios-site .cover .large-icon .icon{
+    font-size: 100px;
+    color: white;
+    background-color: transparent;
+}
+
+
+.audios-site .large-icon{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    color: white;
+}
+
+.audios-site .feedback-container{
+    color: white;
+}
+
+.audios-site .search{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.audios-site .search input{
+    width: 300px;
+    text-align: center;
+    height: 35px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.audios-site .search button{
+    background-color: rgb(202, 110, 118);
+    color: white;
+    padding: 3px 10px;
+    margin: 5px 0px;
+    border: 0px;
+    border-radius: 10px;
+}
+
+.audios-site .items-container{
+    width: 80%;
+    border: 1px solid white;
+    margin: 0 auto;
+    background-color: rgb(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.audios-site .individual-item{
+    width: 200px;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    margin: 30px auto;
+    border: 1px solid transparent;
+    padding: 10px 0px;
+}
+.audios-site .individual-item:hover{
+    border: 1px solid wheat;
+}
+.audios-site .individual-item img{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.audios-site .individual-item .details-conatiner .added-streaming-platforms .platforms a{
+    color: white;
+}
+
+.audios-site .individual-item .details-conatiner .added-streaming-platforms .platforms div{
+    display: inline-block;
+    margin: 3px;
+    border: 1px solid transparent;
+}
+.audios-site .individual-item .details-conatiner .added-streaming-platforms .platforms div:hover{
+    border: 1px solid wheat;
+}
+
+@media all and (max-width: 620px) {
+    .audios-site .items-container{
+        width: 100%;
+        grid-template-columns: 50% 50%;
+    }
+
+    .audios-site .individual-item{
+        margin: 20px auto;
+    }
+
+
+    .audios-site .title{
+      font-weight: 100;   
+    }
+
+}
+
+@media all and (max-width: 399px){
+   
+    .audios-site .individual-item{
+        margin: 10px auto;
+        width: 100px;
+    }
+
+    .audios-site .individual-item img{
+        width: 80px;
+        height: 80px;
+    }
+
+
+    .audios-site .title{
+      font-size: small;   
+    }
+}
+
+
+@media all and (max-width: 305px){
+    .audios-site .search input{
+     width: 95%;
+    }
+
+}
+
+@media screen and (max-width : 264px){
+    .audios-site{
+        padding-top: 200px;
+    }
+}
+
+@media all and (max-width: 210px){
+    .audios-site .large-icon{
+        font-size: medium;
+    }
+    
+    .audios-site .items-container{
+        grid-template-columns: 100%;
+    }
+}
+
+
+@media all and (max-width: 100px){
+    .audios-site .cover .large-icon .icon{
+        font-size: 45px;
+    }
+    .audios-site .search button{
+        display: none;
+    }
+    .audios-site .items-container .individual-item {
+        width: 100%;
+    }
+    .audios-site    .items-container .individual-item img{
+        width: 50px;
+        height: 50px;
+    }
+}

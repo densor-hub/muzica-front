@@ -1,0 +1,113 @@
+.website-created{
+    padding: 50px 0px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.website-created .note{
+    color: white;
+    font-size: xx-large;
+    margin-bottom: 20px;
+}
+
+.website-created .website-url-container{
+    border: 2px solid rgb(247, 78, 92);  
+    background-color: white;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    height: fit-content;
+    border-radius: 30px;
+    padding: 6px;
+}
+
+.website-created .website-url-container .copy-icon{
+    height: 20px;
+    width: 20px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px;
+    background-color: white;
+
+}
+
+.website-created .website-url-container .copy-icon:hover{
+    background-color: rgba(205, 151, 151, 0.486);
+    cursor: pointer;
+}
+
+.website-created .website-url-container .copy-icon .icon{
+    color: rgb(227, 78, 90);
+}
+
+.website-created .website-url-container div{
+    background-color: transparent;
+    color: rgb(255, 71, 86);
+    border: 0px;
+    width: 100%;
+    height: fit-content;
+    border-radius: 30px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-40%);
+
+}
+
+.website-created .go-to-dashboard a{
+    text-decoration: underline;
+    color: white;    
+
+}
+
+.website-created .visit-website-btn-container button{
+    background-color: rgb(255, 71, 86);
+    color: white;
+    padding: 10px;
+    border: 0px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.website-created .copied-to-Clipboard{
+    width: fit-content;
+    margin: 0 auto;
+    font-size: small;
+    border: 1px solid rgb(86, 76, 76);
+    background-color: rgba(164, 161, 161, 0.343);
+    color: white;
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+
+
+@media all and (max-width: 243px){
+    .website-created .website-url-container div{
+        font-size: x-small;
+    }   
+
+.website-created .visit-website-btn-container button{
+    width: 90vw;
+    margin: 0 auto;
+    font-size: small;
+    margin-top: 20px;
+
+}
+
+    .website-created .go-to-dashboard {
+        width: 80vw;
+        font-size: small;
+        margin: 0 auto;
+    }
+}
+
+@media all and (max-width: 173px){
+    .website-created .note{
+        font-size: medium;
+        width: 80vw;
+        margin: 0 auto
+    }
+}

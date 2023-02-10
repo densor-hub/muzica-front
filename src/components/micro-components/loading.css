@@ -1,0 +1,54 @@
+.loading-container{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0,0,0,0.6);
+    min-height: 100vh;
+    display: flex;
+    z-index: 100;
+    
+}
+.loading-container .spinner{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.part1, .part2{
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    position: absolute;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    mix-blend-mode: difference;
+}
+
+.part1{
+    border-left-color: rgb(255, 71, 86);
+    animation: rotateClockwise 1s infinite ease-in-out;
+}       
+
+.part2{
+    border-right-color: white ;
+    animation: rotateAntiClockwise 1s infinite ease-in-out;
+    animation-delay: 1.5ms;
+}
+
+@keyframes rotateClockwise{
+    0%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateAntiClockwise {
+    0% {
+        transform: rotate(-360deg);
+    }
+}
+

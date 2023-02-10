@@ -1,0 +1,82 @@
+.add-images{
+    border: 2px solid white;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(0,0,0,0.7);
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.add-images td{
+    height: 30px;
+}
+
+.add-images td button{
+    background-color: rgb(255, 71, 86);
+    color: white;
+    border: 0px;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.add-images td input{
+    width: 190px;
+}
+
+.add-images ::-webkit-file-upload-button{
+    background-color: white;
+    font-weight: bold;
+    color: rgb(255, 71, 86);
+    border: 0px;
+    padding: 3px;
+}
+
+.image-viewer {
+    width: 100vw;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-viewer img{
+    width: 400px;
+    height: fit-content;
+    margin: 0 auto;
+}
+
+.decision-buttons button{
+    background-color: rgb(255, 71, 86);
+    color: white;
+    border: 0px;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+@media all and (max-width: 400px){
+    .image-viewer {
+        width: 100vw;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .image-viewer img{
+        width: 90vw;
+        height: fit-content;
+        margin: 0 auto;
+    }
+}
+
+@media all and (max-width: 183px){
+    .add-images{
+        width: 100vw;
+        padding: 50px 0px;
+        overflow: scroll;
+    }
+
+    .add-images table{
+        margin: 0 auto;
+    }
+}

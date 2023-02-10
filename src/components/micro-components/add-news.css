@@ -1,0 +1,113 @@
+.add-news{
+    border: 2px solid white;
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 20px;
+    background-color: rgb(0,0,0,0.7);
+    color: white;
+}
+
+.add-news td{
+    height: 30px;
+}
+
+.add-news td.label{
+    width: 100px;
+    display: grid;
+    grid-template-columns: 95% 5%;
+}
+
+.add-news td span{
+    position: relative;
+    right: 10px;
+}
+
+.add-news form input,
+.add-news form textarea{
+    width: 200px;
+    position: relative;
+    top: -7px;
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 3px solid white;;
+    color: white;
+
+}
+
+.add-news form textarea{
+    min-height: 100px;
+}
+
+
+
+.add-news form button{
+    background-color: white;
+    color: rgb(255, 71, 86);
+    font-weight: bold;
+    border: 0px;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin-top: 10px;
+    position: relative;
+    left: 20%;
+}
+
+.list-of-added-news{
+    border: 2px solid white;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 5px;
+    text-align: center;
+    min-height: 300px;
+    padding: 50px;
+    background-color: rgb(0,0,0,0.7);
+    border-radius: 20px;
+    overflow: scroll;
+}
+
+.list-of-added-news .heading{
+    margin-bottom: 10px;
+}
+
+@media all and (max-width: 425px){
+    .add-news{
+        width: 100vw;
+        padding: 50px 0px;
+    }
+
+    .add-news form{
+        margin: 0 auto;
+        width: fit-content;
+    }
+    .add-news form table td{
+        width: 20vw;
+    }
+
+    .add-news form table td  input,
+    .add-news form table td  textarea{
+        width: 50vw;
+
+    }
+
+    
+}
+
+
+@media all and (max-width: 250px){
+    .add-news td.label{
+        width: 70px;
+    }
+}
+
+@media all and (max-width: 185px){
+    .add-news{
+        overflow: scroll;
+    }
+    .add-news form button{
+        padding: 3px;
+        font-size: small;
+    }
+}

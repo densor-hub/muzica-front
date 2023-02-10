@@ -1,0 +1,46 @@
+body{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 100vh;
+    background-color: rgb(0,0,0,0.7);
+    background-image: url('../../../../public/images/IMG_4488.JPG');
+}
+
+.edit-audio-container{
+    min-height: 100vh;
+    background-color: rgb(0,0,0,0.4);
+}
+
+
+.loggedinheader{
+    text-align: center;
+    position: relative;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loggedinheader a{
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid white;
+    position: relative;
+}
+
+.loggedinheader  a:hover{
+    background-color: rgba(255, 255, 255, 0.282);
+}
+.loggedinheader  a:focus{
+    background-color: rgb(168, 64, 64);
+}
+
+
+ .feedback-container{
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgb(162, 74, 74);
+    padding: 5px 0px;
+}
+

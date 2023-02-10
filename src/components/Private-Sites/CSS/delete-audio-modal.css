@@ -1,0 +1,65 @@
+
+.modal-container {
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: transparent;
+    z-index: 50;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(105, 72, 10, 0.442);
+}
+
+.modal-container .content-container{
+    background-color: rgb(86, 64, 64);
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    width: 95vw;
+    transform: translateY(-50%);
+}
+
+.modal-container .content-container .close-button-container{
+    text-align: right;
+}
+.modal-container .content-container .close-Icon{
+    background-color: red;
+    color: white;
+    border: 0px;
+}
+.modal-container .content-container .content{
+    width: 400px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+.modal-container .content-container .content .decision-buttons-container button{
+    background-color: white;
+    border: 0px;
+    margin: 10px;
+    color: brown;
+}
+.modal-container button{
+    color: white;
+    padding: 5px 10px;
+}
+
+@media all and (max-width: 310px){
+    .modal-container .content-container{
+        width: 100vw;
+    }
+
+    .modal-container .content-container .content{
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+}

@@ -1,0 +1,182 @@
+.add-upcoming{
+    border: 2px solid white;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: rgb(0,0,0,0.7);
+    padding: 50px;
+    border-radius: 20px;
+}
+
+
+.add-upcoming form td{
+    width: 100px;
+    height: 30px;
+}
+
+.add-upcoming form td.label{
+    display: grid;
+    grid-template-columns: 95% 5%;
+}
+
+.add-upcoming form td.label span{
+    position: relative;
+    right: 10px;
+}
+.add-upcoming .form1{
+   z-index: 10;
+   height: 30px;
+   position: relative ;
+}
+
+.add-upcoming .form1 td .type{
+    border: 1px solid rgb(255, 71, 86);;
+    position: relative;
+    top: -15px;
+    right: 0px;
+}
+.add-upcoming .form1 td .type button{
+    width: 100%;
+    background-color: rgb(255, 71, 86);
+    color: white;
+    border: 0px;
+    padding: 2px 0px;
+}
+
+.add-upcoming .form1 td .type button:hover,
+.add-upcoming .form1 td .type button:target{
+    background-color: white;
+    color: rgb(255, 71, 86);
+}
+
+.add-upcoming .form2{
+    z-index: -10;
+}
+.add-upcoming form input,
+.add-upcoming form textarea{
+    width: 110px;
+    position: relative;
+    top: -7px;
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 3px solid white;
+    color: white;
+
+}
+
+.add-upcoming .form2 button{
+    background-color: white;
+    color: rgb(255, 71, 86);
+    font-weight: bold;
+    border: 0px;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.list-of-added-upcoming {
+    margin-top: 5px;
+    background-color: rgba(255, 71, 86, 0.696);
+}
+
+.list-of-added-upcoming .listeheading{
+    background-color: rgb(255, 71, 86);
+}
+
+.list-of-added-upcoming section{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    text-align: center;
+    min-height: 50px;
+    background-color: rgba(255, 71, 86, 0.696);
+    border-bottom: 1px solid rgb(255, 71, 86);
+    background-color: rgb(0,0,0,0.7);
+}
+
+.list-of-added-upcoming section div{
+    position: relative;
+    padding: 5px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-of-added-upcoming button{
+    background-color: rgb(255, 71, 86);
+    color: white;
+    border: 0px;
+    padding: 2px 5px;
+    margin: 0 auto;
+    border-radius: 8px;
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.list-of-added-upcoming button.edit{
+    background-color: green;
+    border: 1px solid white;
+}
+.list-of-added-upcoming button.delete{
+    background-color: red;
+    border: 1px solid white;
+}
+
+@media all and (max-width: 330px){
+    .add-upcoming{
+        width: 100vw;
+        padding: 50px 0px;
+    }
+
+    .add-upcoming .form1,
+    .add-upcoming .form2{
+        padding: 0px;
+        margin: 0 auto;
+        width: fit-content;
+
+    }
+
+    .add-upcoming .form1 td,
+    .add-upcoming .form2 td{
+        width: 50px;
+
+    }
+
+    .add-upcoming .form1 td input,
+    .add-upcoming .form2 td input,
+    .add-upcoming .form2 textarea{
+        position: relative;
+        left: 15px;
+    }
+
+    .add-upcoming form td.label span.notForTooSmall{
+        visibility: hidden;
+        border: 1px solid red;
+    }
+}
+
+@media all and (max-width: 230px){
+    .add-upcoming{
+        overflow: scroll;
+    }
+
+    .add-upcoming .form1 td.label,
+    .add-upcoming .form2 td.label{
+        font-size: small;
+        width: 50px;
+    }
+
+    .add-upcoming  form td {
+        font-size: small;
+        min-width: 50px;
+    }
+
+    .add-upcoming  form TD input,
+    .add-upcoming  form TD textarea {
+        font-size: small;
+        width: 50VW;
+    }
+
+    .add-upcoming .form2 button{
+        padding: 3px;
+    }
+}

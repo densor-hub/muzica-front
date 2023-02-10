@@ -1,0 +1,166 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+.added-items .search-item{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.added-videos .list-of-individual-items{
+    width: 87%;
+    display: grid;
+    grid-template-columns:  repeat(auto-fit, minmax(250px, 1fr));
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.387);
+    border: 1px solid white;
+}
+
+.added-videos .list-of-individual-items .for-videos{
+    margin: 0 auto;
+    padding-top: 5px;
+    width: 200px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 95% 5%;
+    margin-bottom: 20px;
+}
+
+
+
+.added-videos .indivial-item .optionsBtn{
+    height: 30px;
+    width: 30px;
+    position: relative;
+    right: 10px;
+    background-color: transparent;
+}
+
+
+.added-videos .indivial-item .title{
+    text-align: center;
+    color: white;
+}
+
+.added-videos .for-videos .options-container{
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    right: 17px;
+}
+
+.added-items .for-videos button{
+    color: white;
+    padding: 3px 5px;
+    border: 0px;
+    margin-bottom: 5px;
+}
+
+.added-items .for-videos button.edit{
+    background-color: green;
+}
+
+.added-items .for-videos button.delete{
+    background-color: red;
+}
+
+.added-items .for-videos button.details{
+    background-color: rgb(67, 104, 67);
+}
+
+
+.added-items .for-videos .video-container iframe{
+    width: 160px;
+    height: 90px;
+    border: 2px solid rgb(162, 74, 74);
+    position: relative;
+    right: 4px;
+}
+
+.added-items .feedback-container{
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: rgb(162, 74, 74);
+    padding: 5px 0px;
+}
+
+.added-items .list-of-individual-items .for-videos .firstoptionsBtn{
+    position: relative;
+    left: 3px;
+}
+
+
+@media all and (max-width: 650px){
+   
+
+    .added-videos .list-of-individual-items{
+        width: 100%;
+        grid-template-columns: 50% 50%;
+    }
+    .added-videos .list-of-individual-items .for-videos{
+        position: relative;
+        right: 10px;
+    }
+
+}
+
+
+@media all and (max-width: 465px) {
+
+    .added-items .search-item input{
+        width: 90%;
+    }
+
+    .added-items .list-of-individual-items .for-videos{
+        height: 100px;
+        position: relative;
+        width: 120px;
+    }
+
+    .added-items .list-of-individual-items .for-videos .options-container .options{
+        position: relative;
+        left: 7px;
+
+    }
+
+   
+
+    .added-items .indivial-item .video-container iframe{
+        width: 100px;
+        height: 60px;
+    }
+    
+
+}
+
+@media all and (max-width: 330px){
+    
+    .added-items header a{
+        font-size: 14PX;
+        padding: 5px;
+    }
+}
+
+@media all and (max-width: 313px){
+
+
+    .added-videos .list-of-individual-items{
+        grid-template-columns: 100vw;
+        width: 100vw;
+        height: fit-content;
+    }
+
+    .added-items .for-videos{
+        width: 100px;
+    }
+
+}
