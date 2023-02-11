@@ -272,10 +272,14 @@ body {
 
 
 
-@media all and (max-width: 450px) {
+@media all and (max-width: 455px) {
     .signin-container .form-container {
         width: 100vw;
         overflow-x: hidden;
+    }
+
+    .signin-container .form-container form button.submit {
+        padding: 8px;
     }
 }
 

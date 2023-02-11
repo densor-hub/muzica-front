@@ -17,7 +17,7 @@ const SignOut = () => {
 
                 setShowLoading(true);
                 await axios.get(`${API_BASE_URL}/sign-out`, { withCredentials: true }).then(() => {
-                    console.log('signinOUTTT')
+                    setAuth('');
                     navigateTo('/login')
                 })
 

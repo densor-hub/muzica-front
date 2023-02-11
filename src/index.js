@@ -18,26 +18,26 @@ const HomePage = lazy(() => { return import('./components/micro-components/landi
 const Profile = lazy(() => { return import('./components/Private-Sites/Dashboard-page') });
 
 const AddedAudios = lazy(() => { return import('./components/Private-Sites/added-audios') });
-const EditAdudio = lazy(() => { return import('./components/Private-Sites/Modals/edit-audio') });
-const AddNewAudio = lazy(() => { return import('./components/Private-Sites/Modals/add-audio') });
+const EditAdudio = lazy(() => { return import('./components/Private-Sites/sub-compoments/edit-audio') });
+const AddNewAudio = lazy(() => { return import('./components/Private-Sites/sub-compoments/add-audio') });
 
 const AddedImages = lazy(() => { return import('./components/Private-Sites/added-images') });
-const AddNewImage = lazy(() => { return import('./components/Private-Sites/Modals/add-image') });
+const AddNewImage = lazy(() => { return import('./components/Private-Sites/sub-compoments/add-image') });
 
 const AddedVideos = lazy(() => { return import('./components/Private-Sites/added-videos') });
-const EditVideo = lazy(() => { return import('./components/Private-Sites/Modals/edit-video') });
-const AddNewVideo = lazy(() => { return import('./components/Private-Sites/Modals/add-video') })
+const EditVideo = lazy(() => { return import('./components/Private-Sites/sub-compoments/edit-video') });
+const AddNewVideo = lazy(() => { return import('./components/Private-Sites/sub-compoments/add-video') })
 
 const AddedUpcoming = lazy(() => { return import('./components/Private-Sites/added-upcoming') });
-const AddNewUpcoming = lazy(() => { return import('./components/Private-Sites/Modals/add-upcoming') })
-const EditUpcoming = lazy(() => { return import('./components/Private-Sites/Modals/edit-upcoming') })
+const AddNewUpcoming = lazy(() => { return import('./components/Private-Sites/sub-compoments/add-upcoming') })
+const EditUpcoming = lazy(() => { return import('./components/Private-Sites/sub-compoments/edit-upcoming') })
 
 const AddedNews = lazy(() => { return import('./components/Private-Sites/added-news') });
-const EditNews = lazy(() => { return import('./components/Private-Sites/Modals/edit-news') });
-const AddNews = lazy(() => { return import('./components/Private-Sites/Modals/add-News') });
+const EditNews = lazy(() => { return import('./components/Private-Sites/sub-compoments/edit-news') });
+const AddNews = lazy(() => { return import('./components/Private-Sites/sub-compoments/add-News') });
 
 const AddedBiography = lazy(() => { return import('./components/Private-Sites/added-biography') });
-const EditBiography = lazy(() => { return import('./components/Private-Sites/Modals/edit-biography') });
+const EditBiography = lazy(() => { return import('./components/Private-Sites/sub-compoments/edit-biography') });
 
 const AddedSocials = lazy(() => { return import('./components/Private-Sites/added-socials') });
 
