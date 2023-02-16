@@ -1,72 +1,72 @@
-    .added-images .page-heading{
+    .added-images .page-heading {
         position: relative;
         top: 0px;
     }
+
     .added-images .list-of-individual-items {
         border: 1px solid rgba(204, 184, 184, 0.4);
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         padding: 20px;
-        overflow: scroll;
     }
 
-    .added-images .list-of-individual-items .for-images{
+    .added-images .list-of-individual-items .for-images {
         text-align: center;
     }
 
-    .added-images .list-of-individual-items .for-images img{
+    .added-images .list-of-individual-items .for-images img {
         width: 230px;
         margin: 0 auto;
         border: 1px solid black;
     }
 
-    @media all and (max-width: 611px){
-        .added-images .list-of-individual-items{
+    @media all and (max-width: 611px) {
+        .added-images .list-of-individual-items {
             grid-template-columns: 50% 50%;
             width: 100vw;
         }
-        
+
     }
 
-    @media all and (max-width: 495px){
+    @media all and (max-width: 495px) {
         .added-images .list-of-individual-items {
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
         }
 
-        .added-images .list-of-individual-items .for-images{
+        .added-images .list-of-individual-items .for-images {
             width: 100px;
             text-align: center;
             margin: 0 auto;
         }
 
-        .added-images .list-of-individual-items .for-images img{
+        .added-images .list-of-individual-items .for-images img {
             width: 100px;
         }
     }
 
-    @media all and (max-width:355px){
+    @media all and (max-width:355px) {
         .added-images .list-of-individual-items {
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 
-    @media all and (max-width:254px){
+    @media all and (max-width:254px) {
         .added-images .list-of-individual-items {
-            grid-template-columns: repeat(1,1fr);
+            grid-template-columns: repeat(1, 1fr);
         }
     }
 
-    @media all and (max-width:154px){
+    @media all and (max-width:154px) {
 
-        .added-images .list-of-individual-items{
+        .added-images .list-of-individual-items {
             padding: 0px;
             margin: 0px;
         }
-        .added-images .list-of-individual-items .for-images img{
+
+        .added-images .list-of-individual-items .for-images img {
             width: 50px;
             height: 50px;
             padding: 0px;
             margin: 0px;
         }
     }
-

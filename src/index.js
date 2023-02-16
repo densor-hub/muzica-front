@@ -18,26 +18,26 @@ const HomePage = lazy(() => { return import('./components/micro-components/landi
 const Profile = lazy(() => { return import('./components/Private-Sites/Dashboard-page') });
 
 const AddedAudios = lazy(() => { return import('./components/Private-Sites/added-audios') });
-const EditAdudio = lazy(() => { return import('./components/Private-Sites/sub-compoments/edit-audio') });
-const AddNewAudio = lazy(() => { return import('./components/Private-Sites/sub-compoments/add-audio') });
+const EditAdudio = lazy(() => { return import('./components/Private-Sites/sub-components/edit-audio') });
+const AddNewAudio = lazy(() => { return import('./components/Private-Sites/sub-components/add-audio') });
 
 const AddedImages = lazy(() => { return import('./components/Private-Sites/added-images') });
-const AddNewImage = lazy(() => { return import('./components/Private-Sites/sub-compoments/add-image') });
+const AddNewImage = lazy(() => { return import('./components/Private-Sites/sub-components/add-image') });
 
 const AddedVideos = lazy(() => { return import('./components/Private-Sites/added-videos') });
-const EditVideo = lazy(() => { return import('./components/Private-Sites/sub-compoments/edit-video') });
-const AddNewVideo = lazy(() => { return import('./components/Private-Sites/sub-compoments/add-video') })
+const EditVideo = lazy(() => { return import('./components/Private-Sites/sub-components/edit-video') });
+const AddNewVideo = lazy(() => { return import('./components/Private-Sites/sub-components/add-video') })
 
 const AddedUpcoming = lazy(() => { return import('./components/Private-Sites/added-upcoming') });
-const AddNewUpcoming = lazy(() => { return import('./components/Private-Sites/sub-compoments/add-upcoming') })
-const EditUpcoming = lazy(() => { return import('./components/Private-Sites/sub-compoments/edit-upcoming') })
+const AddNewUpcoming = lazy(() => { return import('./components/Private-Sites/sub-components/add-upcoming') })
+const EditUpcoming = lazy(() => { return import('./components/Private-Sites/sub-components/edit-upcoming') })
 
 const AddedNews = lazy(() => { return import('./components/Private-Sites/added-news') });
-const EditNews = lazy(() => { return import('./components/Private-Sites/sub-compoments/edit-news') });
-const AddNews = lazy(() => { return import('./components/Private-Sites/sub-compoments/add-News') });
+const EditNews = lazy(() => { return import('./components/Private-Sites/sub-components/edit-news') });
+const AddNews = lazy(() => { return import('./components/Private-Sites/sub-components/add-News') });
 
 const AddedBiography = lazy(() => { return import('./components/Private-Sites/added-biography') });
-const EditBiography = lazy(() => { return import('./components/Private-Sites/sub-compoments/edit-biography') });
+const EditBiography = lazy(() => { return import('./components/Private-Sites/sub-components/edit-biography') });
 
 const AddedSocials = lazy(() => { return import('./components/Private-Sites/added-socials') });
 
@@ -46,7 +46,7 @@ const ResetPasswordPrivate = lazy(() => { return import('./components/Private-Si
 const ResetPasswordPublic = lazy(() => { return import('./components/Public-sites/reset-password-public') });
 
 const EnterRegistrationCode = lazy(() => { return import('./components/micro-components/submitCodeRegistration') });
-const HomeRoute = lazy(() => { return import('./customRoutes/HomeRoute') });
+//const Submitauth02Back = lazy(() => { return import('./components/micro-components/submitauth02Back') });
 
 
 const AppRoutes = () => {
@@ -60,7 +60,7 @@ const AppRoutes = () => {
                         <Route path='/' element={<HomePage />}></Route>
                         <Route path='login' element={<SignIn />}></Route>
                         <Route path='register' element={<SignUp />}></Route>
-                        <Route path='webpage' element={<VerifyWebsite />}></Route>
+                        <Route path='home' element={<VerifyWebsite />}></Route>
                         <Route path='audios' element={<VerifyWebsite />}></Route>
                         <Route path='videos' element={<VerifyWebsite />}></Route>
                         <Route path='images' element={<VerifyWebsite />}></Route>
@@ -69,8 +69,6 @@ const AppRoutes = () => {
                         <Route path='contact' element={<VerifyWebsite />}></Route>
                         <Route path='reset-password' element={<ResetPasswordPublic />}></Route>
                         <Route path='submit-verfification-code' element={<EnterRegistrationCode />}></Route>
-                        <Route path='home' element={<HomeRoute />}></Route>
-
                     </Route>
 
                     <Route path={`/${auth?.stagenameInUrl?.trim()?.toLowerCase()}`} element={<PrivateRoute />}>

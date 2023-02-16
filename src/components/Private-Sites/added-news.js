@@ -6,7 +6,7 @@ import useAuth from "../../customHooks/useAuth";
 import setStatuscodeErrorMessage from "../../FNS/setStatuscodeErrorMessage";
 import Loading from "../micro-components/loading";
 import { Link, useNavigate } from "react-router-dom";
-import DeleteNews from "./Modals/delete-news-modal";
+import DeleteNews from "./sub-components/delete-news-modal";
 
 
 

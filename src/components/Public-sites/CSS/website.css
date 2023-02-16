@@ -78,7 +78,6 @@ body::-webkit-scrollbar-thumb {
     border-top: 5px solid rgb(255, 71, 86);
     border-top-right-radius: 20px;
     max-height: 490px;
-    overflow-x: scroll;
 }
 
 .mid-section .upcoming .data {
@@ -96,7 +95,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .mid-section .upcoming .data .details .type {
-    background-color: rgb(255, 71, 86);
+    background-color: rgb(255, 45, 62);
     width: 20vw;
     text-align: center;
     color: white;
@@ -114,7 +113,7 @@ body::-webkit-scrollbar-thumb {
 .mid-section .upcoming .date {
     width: fit-content;
     width: 50px;
-    background-color: rgb(255, 71, 86);
+    background-color: rgb(255, 45, 62);
     text-align: center;
     top: 0;
 }

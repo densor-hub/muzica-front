@@ -6,7 +6,7 @@ import useAuth from "../../customHooks/useAuth";
 import setStatuscodeErrorMessage from "../../FNS/setStatuscodeErrorMessage";
 import Loading from "../micro-components/loading";
 import { Link, useNavigate } from "react-router-dom";
-import DeleteUpcomingModal from "./Modals/delete-upcoming-modal";
+import DeleteUpcomingModal from "./sub-components/delete-upcoming-modal";
 import { SlOptions } from 'react-icons/sl';
 import { equal_To_Or_Bigger_Than_Toadys_Date, isValidDate } from "../../FNS/DurationValidator";
 

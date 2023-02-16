@@ -286,7 +286,7 @@ const AddedSocials = () => {
             {bools?.showloading && <Loading />}
             <main >
 
-                <div className="page-heading" style={{ marginTop: "40px" }}>ADDED <i><b>CONTACT</b></i></div>
+                <div className="page-heading" style={{ paddingTop: "40px" }}>ADDED <i><b>CONTACT</b></i></div>
 
                 <div className="feedback-container" style={!feedback ? { backgroundColor: "transparent" } : {}}>
                     <div className="feeback">{feedback}<span style={{ visibility: "hidden" }}>.</span></div>

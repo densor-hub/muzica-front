@@ -6,7 +6,7 @@ import useAuth from "../../customHooks/useAuth";
 import setStatuscodeErrorMessage from "../../FNS/setStatuscodeErrorMessage";
 import Loading from "../micro-components/loading";
 import { Link, useNavigate } from "react-router-dom";
-import DeleteVideo from "./Modals/delete-video-modal";
+import DeleteVideo from "./sub-components/delete-video-modal";
 import { SlOptions } from 'react-icons/sl';
 
 

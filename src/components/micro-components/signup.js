@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { includeNumbers, includesLowerCase, includesSymbols, includesUpperCase } from "../../FNS/includes";
 import axios from 'axios';
 import { API_BASE_URL } from "../../Resources/BaseURL";
@@ -82,7 +82,7 @@ const SignUp = () => {
 
     const register = async () => {
 
-
+        const date = new Date();
         let password, confirmpassword, fullname, email, stagename, dateofbirth;
 
         inputRefs.current.forEach(element => {
@@ -100,7 +100,7 @@ const SignUp = () => {
                         setFeedback('Invalid full name');
                     }
                     else {
-                        setFeedback('');
+
                         divContainingInputRefs.current[0].style.borderBottom = `3px solid ${themeColors?.valid}`;
                     }
                 }
@@ -130,7 +130,13 @@ const SignUp = () => {
                 }
                 else {
                     if (isValidDate(dateofbirth)) {
-                        divContainingInputRefs.current[3].style.borderBottom = `3px solid ${themeColors?.valid}`;
+
+                        if (date.getFullYear() - new Date(dateofbirth).getFullYear() >= 5) {
+                            divContainingInputRefs.current[3].style.borderBottom = `3px solid ${themeColors?.valid}`;
+                        } else {
+                            setFeedback('At least you must be 5 years old')
+                        }
+
 
                     }
                     else {
@@ -210,7 +216,8 @@ const SignUp = () => {
 
         //gender
         if (!inputValuesForSynchronusRendering?.gender) {
-            divContainingInputRefs.current[1].style.borderBottom = `3px solid ${themeColors?.error}`
+            divContainingInputRefs.current[1].style.borderBottom = `3px solid ${themeColors?.error}`;
+            setFeedback('Select gender')
         }
         else {
             if (inputValuesForSynchronusRendering?.gender === genderOptions[0] || inputValuesForSynchronusRendering?.gender === genderOptions[0]) {
@@ -222,7 +229,8 @@ const SignUp = () => {
 
         //phone cos it proves stubborn when added to collection of refs
         if (!phoneNumber) {
-            phonenumnerDivRef.current.style.borderBottom = `3px solid ${themeColors?.error}`
+            phonenumnerDivRef.current.style.borderBottom = `3px solid ${themeColors?.error}`;
+            setFeedback('Enter all fields')
         }
         else {
             if (!isValidPhoneNumber(phoneNumber)) {
@@ -245,13 +253,12 @@ const SignUp = () => {
         if ((fullname && !includeNumbers(fullname) && !includesSymbols(fullname))
             && (inputValuesForSynchronusRendering?.gender && (inputValuesForSynchronusRendering?.gender === genderOptions[0] || inputValuesForSynchronusRendering?.gender === genderOptions[1]))
             && (stagename)
-            && (isValidDate(dateofbirth))
+            && (isValidDate(dateofbirth) && (date.getFullYear() - new Date(dateofbirth).getFullYear() >= 5))
             && (phoneNumber !== '' && phoneNumber !== undefined && isValidPhoneNumber(phoneNumber))
             && (email !== "" && formatEmail(email))
             && password !== "" && password !== undefined && (confirmpassword === password)
             && ((includeNumbers(password) && includesUpperCase(password) && includesLowerCase(password)) || (includesSymbols(password) && includesUpperCase(password) && includesLowerCase(password)) || (includeNumbers(password) && includesUpperCase(password) && includesLowerCase(password) && includesSymbols(password)))) {
 
-            console.log('hererer')
 
             //set all divs containing inputs to default colors
             divContainingInputRefs?.current?.forEach(element => element.style.borderBottom = `3px solid ${themeColors?.valid}`)
@@ -274,8 +281,11 @@ const SignUp = () => {
                 if (!error?.response?.data) {
                     setFeedback("Network error...")
                 }
-                if (error?.response?.status === 502) {
+                else if (error?.response?.status === 502) {
                     setFeedback('Could not connect, try again later')
+                }
+                if (error?.response?.status === 409) {
+                    setFeedback('Phone number or email taken')
                 }
                 else {
                     setStatuscodeErrorMessage(error?.response?.status, setFeedback);
@@ -302,6 +312,13 @@ const SignUp = () => {
     }
 
 
+    useEffect(() => {
+        setTimeout(() => {
+            if (feedback) {
+                setFeedback('')
+            }
+        }, 3000);
+    }, [feedback])
 
     return (
         <>

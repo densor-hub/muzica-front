@@ -61,7 +61,6 @@ const ResetPassword_Public = () => {
         setLogics(p => { return { ...p, showPassword: true } })
     }
 
-
     const hideConfirmPassword = () => {
         inputRefs.current.find((element) => {
             return element.className === 'confirmpassword'
@@ -116,12 +115,13 @@ const ResetPassword_Public = () => {
                     }
                     else if (error?.response?.status === 406) {
                         setFeedback('Invalid code')
+                    } else if (error?.response?.status === 404) {
+                        setFeedback('Accout does not exist')
                     }
                     else {
                         setStatuscodeErrorMessage(error?.response?.status, setFeedback);
                     }
                 }
-
             }
         }
     }
@@ -132,7 +132,6 @@ const ResetPassword_Public = () => {
         let password, confirmpassword, code;
         inputRefs.current.forEach(element => {
 
-            console.log(element?.className === 'code')
             //CODE
             if (element?.className === 'code') {
                 console.log(element)
@@ -232,6 +231,7 @@ const ResetPassword_Public = () => {
                     if (error?.response?.status === 408) {
                         setFeedback('Expired verification code');
                     }
+
                     else {
                         setStatuscodeErrorMessage(error?.response?.status, setFeedback);
                     }

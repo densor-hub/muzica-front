@@ -9,47 +9,47 @@ import Loading from "../../micro-components/loading";
 import '../CSS/image-viewer.css';
 
 
-const ImageViewer=({addedImages, selectedImageUrl, setSelectedImage, setParentFeedback, showDeleteButton})=>{
+const ImageViewer = ({ addedImages, selectedImageUrl, setSelectedImage, setParentFeedback, showDeleteButton }) => {
     const [iterator, setIterator] = useState(0);
     const [showLoading, setShowLoading] = useState(false);
     const [childFeedback, setChildFeedback] = useState('');
-    const {auth} = useAuth();
+    const { auth } = useAuth();
     const NextButtonRef = useRef();
     const PreviousButtonRef = useRef();
 
     const navigateTo = useNavigate();
-    useEffect(()=>{
-        if(addedImages?.length>0){
-        addedImages.map((element, index)=>{
-            if(String(element?.image).trim()===String(selectedImageUrl).trim()){
-                return setIterator(index);
-            }
-            return (String(element?.image).trim()===String(selectedImageUrl).trim())
+    useEffect(() => {
+        if (addedImages?.length > 0) {
+            addedImages.map((element, index) => {
+                if (String(element?.image).trim() === String(selectedImageUrl).trim()) {
+                    return setIterator(index);
+                }
+                return (String(element?.image).trim() === String(selectedImageUrl).trim())
             })
         }
     }, [addedImages, selectedImageUrl]);
-    
-    let iterate =false;
-    const Next=()=>{
-         iterate = true;
-        if(iterate  && iterator !== (addedImages?.length -1)){
-            setIterator(p=>{ return p + 1});
-            iterate= false;
+
+    let iterate = false;
+    const Next = () => {
+        iterate = true;
+        if (iterate && iterator !== (addedImages?.length - 1)) {
+            setIterator(p => { return p + 1 });
+            iterate = false;
         }
-        else{
+        else {
             setIterator(0);
             iterate = false;
         }
     }
 
-    const Previous=()=>{
-         iterate = true;
-        if(iterate && ! (iterator <=0)){
-            setIterator(p=>{ return p-1})
+    const Previous = () => {
+        iterate = true;
+        if (iterate && !(iterator <= 0)) {
+            setIterator(p => { return p - 1 })
             iterate = false;
         }
-        else{
-            setIterator(addedImages?.length-1);
+        else {
+            setIterator(addedImages?.length - 1);
             iterate = false;
         }
     }
@@ -72,40 +72,40 @@ const ImageViewer=({addedImages, selectedImageUrl, setSelectedImage, setParentFe
     //     }
     // },[PreviousButtonRef?.current, NextButtonRef?.current])
 
-    const Delete =async()=>{
+    const Delete = async () => {
         try {
             setShowLoading(true)
-            let response = await axios.put( `${API_BASE_URL}/delete-images:${addedImages[iterator]?._id}`,{selectedItem : addedImages?._id},{withCredentials: true}) ;
+            let response = await axios.put(`${API_BASE_URL}/delete-images:${addedImages[iterator]?._id}`, { selectedItem: addedImages?._id }, { withCredentials: true });
 
-            if(response?.status===200){
+            if (response?.status === 200) {
                 setParentFeedback('Deleted successfully...');
                 setSelectedImage('')
                 setShowLoading(false);
                 navigateTo(`/${auth?.stagenameInUrl?.trim()?.toLowerCase()}/added-images`)
             }
-            else if(response?.status===204){
+            else if (response?.status === 204) {
                 setShowLoading(false);
                 setChildFeedback('Image already deleted..')
             }
 
-            
+
         } catch (error) {
             console.log(error)
-            if(!error?.response?.data){
+            if (!error?.response?.data) {
                 setShowLoading(false)
                 setChildFeedback('Network challenges...')
             }
-            else{
-                if(error?.response?.status===401){
-                    GotoRefreshEndPoint(auth).then((results)=>{
-                        if(results?.status===200){
+            else {
+                if (error?.response?.status === 401) {
+                    GotoRefreshEndPoint(auth).then((results) => {
+                        if (results?.status === 200) {
                             Delete();
-                        }else{
+                        } else {
                             navigateTo(`/${auth?.stagenameInUrl?.trim()?.toLowerCase()}/sign-out`);
                         }
                     })
                 }
-                else{
+                else {
                     setShowLoading(false)
                     setStatuscodeErrorMessage(error?.response?.status, setChildFeedback)
                 }
@@ -113,13 +113,13 @@ const ImageViewer=({addedImages, selectedImageUrl, setSelectedImage, setParentFe
         }
     }
 
-  
+
     return (
         <>
-         {showLoading && <Loading/>}
+            {showLoading && <Loading />}
             <main className="image-viewer-container">
                 <div className="close-button-container">
-                    <button onClick={(e)=>{e.preventDefault(); setSelectedImage("")}}>X</button>
+                    <button onClick={(e) => { e.preventDefault(); setSelectedImage("") }}>X</button>
                 </div>
                 <div className="feedback-conatiner">
                     <div className="feedback">{childFeedback}</div>
@@ -128,9 +128,9 @@ const ImageViewer=({addedImages, selectedImageUrl, setSelectedImage, setParentFe
                     <img alt="" src={addedImages[iterator]?.image}></img>
                 </div>
                 <div className="navigation-buttons">
-                    <button onClick={(e)=>{e.preventDefault(); Previous()}} ref={PreviousButtonRef}>Previous</button>
-                    {showDeleteButton && <button onClick={(e)=>{e.preventDefault(); Delete()}}>Delete</button>}
-                    <button onClick={(e)=>{e.preventDefault(); Next()}} ref={NextButtonRef}>Next</button>
+                    <button onClick={(e) => { e.preventDefault(); Previous() }} ref={PreviousButtonRef}>Previous</button>
+                    {showDeleteButton && <button onClick={(e) => { e.preventDefault(); Delete() }}>Delete</button>}
+                    <button onClick={(e) => { e.preventDefault(); Next() }} ref={NextButtonRef}>Next</button>
                 </div>
             </main>
 

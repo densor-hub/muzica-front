@@ -1,27 +1,40 @@
 import { Navigate, Outlet } from "react-router-dom";
 import GotoRefreshEndPoint from "../FNS/GoToRefreshEndPoint";
-import { useEffect, useState } from "react";
+import { useEffect, useCallback } from "react";
 import useAuth from "../customHooks/useAuth";
 
 
-const PublicRoute=()=>{
-    const [stagenameInUrl, setStagenameInUrl] = useState('');
-    const {auth} = useAuth();
-    useEffect(()=>{
-        if(!auth.goToGoogle){
-            GotoRefreshEndPoint().then((results)=>{
-               if(results?.status ===200){
-                    setStagenameInUrl(results?.data?.stagenameInUrl);
-               }
-            })
-        }
-    })
+const PublicRoute = () => {
+    const { auth, setAuth } = useAuth();
 
-    if(stagenameInUrl && ! window?.location?.search){
-        return <Navigate to={stagenameInUrl}></Navigate>
+    const checkWhtherUserIsSignedIn = useCallback(async () => {
+        if (!window?.location?.search || window?.location?.search?.code) {
+            try {
+                GotoRefreshEndPoint().then(results => {
+                    if (results?.status === 200) {
+                        setAuth(results?.data)
+                    }
+                })
+
+            } catch (error) {
+                //response will be 401 when user is not loggedIn
+                console.log('Error')
+            }
+        }
+    }, [setAuth]
+    )
+
+
+    useEffect(() => {
+        checkWhtherUserIsSignedIn()
+    }, [checkWhtherUserIsSignedIn]);
+
+
+    if (auth?.stagenameInUrl && !window?.location?.search) {
+        return <Navigate to={auth?.stagenameInUrl}></Navigate >
     }
-    else{
-        return <Outlet/>
+    else {
+        return <Outlet />
     }
 
 }

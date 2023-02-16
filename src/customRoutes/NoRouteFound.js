@@ -2,33 +2,37 @@ import useAuth from "../customHooks/useAuth";
 import Loading from "../components/micro-components/loading";
 import Page404 from "../components/404";
 import { useCallback, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { API_BASE_URL } from "../Resources/BaseURL";
-
+import GotoRefreshEndPoint from "../FNS/GoToRefreshEndPoint";
 
 const NoRouteFound = () => {
+
     const { setAuth } = useAuth();
     const [show404, setShow404] = useState(false);
-    const navigateTo = useNavigate();
 
 
     const checkWhtherUserIsSignedIn = useCallback(async () => {
-        console.log('visiting refresh')
-        if (!window?.location?.search || window?.location?.search?.code) {
+        if (!window?.location?.search || window?.location?.search?.code) { //code is for password resseting
             try {
-                let response = await axios?.get(`${API_BASE_URL}/refresh`, { withCredentials: true });
-
-                if (response?.status === 200) {
-                    setAuth(response?.data);
-                    setShow404(true);
-                }
+                GotoRefreshEndPoint().then(results => {
+                    console.log(results)
+                    if (results?.status === 200) {
+                        setAuth(results?.data)
+                        setShow404(true);
+                    } else {
+                        setShow404(true)
+                    }
+                })
 
             } catch (error) {
-                navigateTo('/')
+                //response will be 401 when user is not loggedIn
+                if (error?.response?.status === 401) {
+                    setShow404(true);
+                } else {
+                    setShow404(true)
+                }
             }
         }
-    }, [setAuth, navigateTo]
+    }, [setAuth]
     )
 
 

@@ -40,6 +40,7 @@ const Website = ({ addedAudios, setAddedAudios, addedVideos, setAddedVideos, add
                 setValidAPIEndPoint(response?.data?.validAPI_EndPoints);
             }
         } catch (error) {
+            console.log(error)
             if (error?.response?.status === 404) {
                 setBools(p => { return { ...p, show404: true, show500: false } });
             } else {
@@ -58,7 +59,6 @@ const Website = ({ addedAudios, setAddedAudios, addedVideos, setAddedVideos, add
     let randomlySelectedImage = Math.floor(Math.random() * addedImages?.length);
 
 
-    console.log(addedUpcoming)
     return (
         <>
             {<main className="homepage">

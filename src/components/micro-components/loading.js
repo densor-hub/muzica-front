@@ -1,7 +1,7 @@
 
 import './loading.css';
 
-const Loading=()=>{
+const Loading = () => {
     return (
         <main className='loading-container'>
             <section className='spinner'>

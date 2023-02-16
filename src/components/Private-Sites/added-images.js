@@ -6,8 +6,8 @@ import useAuth from "../../customHooks/useAuth";
 import setStatuscodeErrorMessage from "../../FNS/setStatuscodeErrorMessage";
 import Loading from "../micro-components/loading";
 import { Link } from "react-router-dom";
-import DeleteImage from "./Modals/delete-image-modal";
-import ImageViewer from "./Modals/image-Viewer-modal";
+import DeleteImage from "./sub-components/delete-image-modal";
+import ImageViewer from "./sub-components/image-Viewer-modal";
 import { useNavigate } from "react-router-dom";
 
 import './CSS/added-images.css'

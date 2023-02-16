@@ -7,7 +7,7 @@ import setStatuscodeErrorMessage from "../../FNS/setStatuscodeErrorMessage";
 import Loading from "../micro-components/loading";
 import { Link, useNavigate } from "react-router-dom";
 import { CovertMonthNumbersToAlphabets } from "../../FNS/MonthNumberToAlphabets";
-import DeleteAudioModal from "./Modals/delete-audio-modal";
+import DeleteAudioModal from "./sub-components/delete-audio-modal";
 import { SlOptions } from 'react-icons/sl';
 import { BsYoutube } from 'react-icons/bs';
 import { ImSoundcloud, ImSpotify } from 'react-icons/im';

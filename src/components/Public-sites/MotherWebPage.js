@@ -17,7 +17,7 @@ const UpcomingPage = lazy(() => { return import('./upcoming-site') });
 const NewsPage = lazy(() => { return import('./news-site') });
 const ContactPage = lazy(() => { return import('./contact-site') });
 
-
+//pathname comes from verify website custom route
 const MotherPage = ({ pathname }) => {
     const [addedAudios, setAddedAudios] = useState([]);
     const [addedVideos, setAddedVideos] = useState([]);
@@ -30,11 +30,13 @@ const MotherPage = ({ pathname }) => {
     const [bools, setBools] = useState({ show404: false, show500: false });
     const [validAPIEndPoint, setValidAPIEndPoint] = useState([]);
 
-    let correspondingPathname = ['audios', "videos", "images", "upcoming", "news", "biography", "contact", 'webpage',];
+    let correspondingPathname = ['audios', "videos", "images", "upcoming", "news", "biography", "contact", 'home',];
 
     const getData = useCallback(async () => {
         try {
+            console.log('get settt')
             let response = await axios.get(`${API_BASE_URL}${window?.location?.pathname}${window?.location?.search}`, {});
+            console.log(response)
             if (response?.status === 200) {
                 setAddedAudios(response?.data?.websiteData[0]?.value);
                 setAddedVideos(response?.data?.websiteData[1]?.value);
@@ -47,6 +49,7 @@ const MotherPage = ({ pathname }) => {
                 setValidAPIEndPoint(response?.data?.validAPI_EndPoints)
             }
         } catch (error) {
+            console.log(error)
             if (error?.response?.status === 404 || error?.response?.status === 401) {
                 setBools(p => { return { ...p, show404: true, show500: false } });
             } else {
@@ -59,7 +62,11 @@ const MotherPage = ({ pathname }) => {
 
     useEffect(() => {
         getData();
+        console.log('GETTTINGGG')
     }, [getData])
+
+
+    console.log("motherPAGEEEE")
 
     return (
         <>
@@ -67,8 +74,8 @@ const MotherPage = ({ pathname }) => {
                 <main className='mother'>
                     <section className="header">
                         <div className="navigations">
-                            {<Link to={window?.location?.href?.split('webpage?artiste')?.length === 2 ? window?.location?.href?.slice(window?.location?.origin?.length, window?.location?.href?.length) :
-                                (window?.location?.origin + '/webpage' + window?.location?.search)?.slice(window?.location?.origin?.length, (window?.location?.origin + '/webpage' + window?.location?.search)?.length)
+                            {<Link to={window?.location?.href?.split('home?artiste')?.length === 2 ? window?.location?.href?.slice(window?.location?.origin?.length, window?.location?.href?.length) :
+                                (window?.location?.origin + '/home' + window?.location?.search)?.slice(window?.location?.origin?.length, (window?.location?.origin + '/home' + window?.location?.search)?.length)
                             } style={String(pathname)?.endsWith(correspondingPathname[7]) || String(pathname)?.endsWith(correspondingPathname[7] + '/') ? { backgroundColor: 'rgb(54, 41, 41)' } : {}}>Home</Link>}
 
 

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
 import Loading from './loading'
 import { useRef, useState } from "react";
@@ -9,14 +9,20 @@ import axios from 'axios';
 import { API_BASE_URL } from "../../Resources/BaseURL";
 import setStatuscodeErrorMessage from "../../FNS/setStatuscodeErrorMessage";
 import { BsFillUnlockFill, BsFillLockFill } from 'react-icons/bs';
-import { FcGoogle } from 'react-icons/fc';
-import { AiOutlineCopyright } from 'react-icons/ai'
+import { AiOutlineCopyright } from 'react-icons/ai';
+import GoogleApp from "./loginWithGoogle";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 
 import './signin.css'
 
+
+
+
+
 const SignIn = ({ Parentfeedback }) => {
-    const { setAuth } = useAuth();
+
+    const { setAuth, auth } = useAuth();
     const navigate = useNavigate();
     const [phoneNumber, setPhoneNumber] = useState('');
     const [feedback, setFeedback] = useState('');
@@ -91,10 +97,9 @@ const SignIn = ({ Parentfeedback }) => {
             || (includeNumbers(password) && includesUpperCase(password) && includesLowerCase(password) && includesSymbols(password)))) {
 
             const loginInfo = { username: phoneNumber, password: password };
-            setLogics(p => { return { ...p, showloading: true } })
-
 
             try {
+                setLogics(p => { return { ...p, showloading: true } })
                 const response = await axios.post(`${API_BASE_URL}/sign-in/local`, loginInfo, { withCredentials: true });
 
                 console.log(response)
@@ -128,13 +133,12 @@ const SignIn = ({ Parentfeedback }) => {
         setFeedback('');
     }
 
-    const SignInWithGoogle = async () => {
-        window?.open(`${API_BASE_URL}/sign-in/google`, '_self');
-    }
+
+
 
     return (
         <>
-            <main className="signin-container">
+            {auth?.stagenameInUrl === "" || auth?.stagenameInUrl === null || auth?.stagenameInUrl === undefined ? <main className="signin-container">
                 <header>
                     <Link to={'/'}>Home</Link>
                     <Link to={'/register'}>Sign up</Link>
@@ -178,21 +182,18 @@ const SignIn = ({ Parentfeedback }) => {
                         </form>
 
                         <div className="sign-in-with-google"><Link to={'/reset-password'}>Forgot password? </Link></div>
+
                         <div className="not-having-account">Do not have an account? sign up <Link to={'/register'}>here</Link> </div>
-                        <div className="sign-in-with-google" style={{ marginTop: "5px" }}>
-                            <button style={{ textDecoration: "none" }} onClick={(e) => { e.preventDefault(); SignInWithGoogle(); setAuth({ goToGoogle: true }) }}>
-                                Sign in with
-                                <span style={{ background: "transparent", fontWeight: "bold", border: "0PX", position: "relative", left: "5px" }}>
-                                    <FcGoogle />
-                                    {/* <span className="blue">G</span>
-                                <span className="red">o</span>
-                                <span className="yellow">o</span>
-                                <span className="blue">g</span>
-                                <span className="green">l</span>
-                                <span className="red">e</span> */}
-                                </span>
-                            </button>
-                        </div>
+
+                        <Auth0Provider
+                            domain={"dev-2xzv1o18pqg48l01.us.auth0.com"}
+                            clientId={"W1xixEygVYDTD0xbn2j4PPuzyarPFFwn"}
+                            authorizationParams={{ redirect_uri: `${window?.location?.origin}/login` }}
+                        >
+                            <GoogleApp setFeedback={setFeedback} />
+
+                        </Auth0Provider>
+
 
 
 
@@ -200,7 +201,9 @@ const SignIn = ({ Parentfeedback }) => {
                 </div>
 
                 <footer>  <span style={{ position: "relative", top: "2px" }}><AiOutlineCopyright /></span>  {new Date().getFullYear()} GoldCoast University</footer>
-            </main>
+            </main> :
+
+                <Navigate to={`/${auth?.stagenameInUrl?.trim()?.toLowerCase()}`}></Navigate>}
 
             {logics?.showloading && <Loading />}
         </>
