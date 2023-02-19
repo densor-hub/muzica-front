@@ -220,7 +220,7 @@ const SignUp = () => {
             setFeedback('Select gender')
         }
         else {
-            if (inputValuesForSynchronusRendering?.gender === genderOptions[0] || inputValuesForSynchronusRendering?.gender === genderOptions[0]) {
+            if (inputValuesForSynchronusRendering?.gender === genderOptions[0] || inputValuesForSynchronusRendering?.gender === genderOptions[1]) {
                 divContainingInputRefs.current[1].style.borderBottom = `3px solid ${themeColors?.valid}`
             } else {
                 divContainingInputRefs.current[1].style.borderBottom = `3px solid ${themeColors?.error}`
